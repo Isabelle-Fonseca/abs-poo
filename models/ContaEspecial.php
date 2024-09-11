@@ -37,4 +37,14 @@ class ContaEspecial extends Conta {
             return "Saque não realizado. Valor excede o saldo e o limite.";
         }
     }
+
+    public function transferir(float $valor, Conta $contaDestino): string {
+        if ($valor <= ($this->getSaldo() + $this->getLimite())) {
+            $this->sacar($valor);
+            $contaDestino->depositar($valor);
+            return "Transferência de R$ " . number_format($valor, 2, ',', '.') . " realizada com sucesso.";
+        } else {
+            return "Transferência não permitida. Valor excede o saldo e o limite.";
+        }
+    }
 }
