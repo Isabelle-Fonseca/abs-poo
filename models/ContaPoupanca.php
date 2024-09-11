@@ -28,4 +28,13 @@ class ContaPoupanca extends Conta {
                 "Data de Aniversário: " . $this->dataAniversario;
         return $mensagem;
     }
+
+    public function sacar(float $valor): string {
+        if ($valor <= $this->getSaldo()) {
+            $this->setSaldo($this->getSaldo() - $valor);
+            return "Saque de R$ " . number_format($valor, 2, ',', '.') . " realizado com sucesso.";
+        } else {
+            return "Saque não permitido. Valor excede o saldo.";
+        }
+    }
 }
