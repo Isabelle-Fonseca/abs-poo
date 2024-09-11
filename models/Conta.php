@@ -46,4 +46,12 @@ abstract class Conta {
     abstract public function sacar(float $valor): string;
 
     abstract public function transferir(float $valor, Conta $contaDestino): string;
+
+    public function depositar(float $valor): string {
+        if ($valor <= 0) {
+            return "O valor do depósito deve ser maior que zero.";
+        }
+        $this->saldo += $valor;
+        return "Depósito de R$ " . number_format($valor, 2, ',', '.') . " realizado com sucesso.";
+    }
 }
