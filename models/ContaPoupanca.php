@@ -21,5 +21,11 @@ class ContaPoupanca extends Conta {
         $this->dataAniversario = $dataAniversario;
     }
 
-   
+    public function exibirDadosConta(): string {
+        $mensagem = "Titular: " . $this->getTitular() . ", " .
+                "Número da Conta: " . $this->getNumeroConta() . ", " .
+                "Saldo: R$ " . number_format($this->getSaldo(), 2, ',', '.') . ", " .
+                "Data de Aniversário: " . $this->dataAniversario;
+        return $mensagem;
+    }
 }
