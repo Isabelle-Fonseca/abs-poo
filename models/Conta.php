@@ -42,4 +42,6 @@ abstract class Conta {
     public function exibirDadosConta(): string {
         return "Titular: {$this->getTitular()}, Número da Conta: {$this->getNumeroConta()}, Saldo: R$ " . number_format($this->getSaldo(), 2, ',', '.');
     }
+
+    abstract public function sacar(float $valor): string;
 }
