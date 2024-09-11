@@ -39,4 +39,7 @@ abstract class Conta {
         $this->saldo = $saldo;
     }
 
+    public function exibirDadosConta(): string {
+        return "Titular: {$this->getTitular()}, Número da Conta: {$this->getNumeroConta()}, Saldo: R$ " . number_format($this->getSaldo(), 2, ',', '.');
+    }
 }
