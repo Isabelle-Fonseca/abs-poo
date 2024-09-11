@@ -28,4 +28,13 @@ class ContaEspecial extends Conta {
                     "Saldo: " . $this->getSaldo();
         return $mensagem;
     }
+
+    public function sacar(float $valor): string {
+        if ($valor <= ($this->getSaldo() + $this->getLimite())) {
+            $this->setSaldo($this->getSaldo() - $valor);
+            return "Saque de R$ " . number_format($valor, 2, ',', '.') . " realizado com sucesso.";
+        } else {
+            return "Saque não realizado. Valor excede o saldo e o limite.";
+        }
+    }
 }
