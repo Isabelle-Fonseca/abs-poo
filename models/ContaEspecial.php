@@ -21,4 +21,11 @@ class ContaEspecial extends Conta {
         $this->limite = $limite;
     }
 
+    public function exibirDadosConta(): string {
+        $mensagem = "Nome: " . $this->getTitular() . ", " .
+                    "Numero da Conta: " . $this->getNumeroConta() . ", " .
+                    "Limite: " . $this->getLimite() . ", " .
+                    "Saldo: " . $this->getSaldo();
+        return $mensagem;
+    }
 }
