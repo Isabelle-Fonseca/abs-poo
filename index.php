@@ -14,3 +14,7 @@ echo $contaEspecial->sacar(100.00) . "<br>";
 // Teste ContaPoupanca
 $contaPoupanca = new ContaPoupanca("João Oliveira", "5678", 2000.00, "01/01");
 
+echo "<h3>Conta Especial</h3>";
+echo $contaEspecial->exibirDadosConta() . "<br>";
+echo "<h3>Conta Poupança</h3>";
+echo $contaPoupanca->exibirDadosConta() . "<br>";
