@@ -18,3 +18,12 @@ echo "<h3>Conta Especial</h3>";
 echo $contaEspecial->exibirDadosConta() . "<br>";
 echo "<h3>Conta Poupança</h3>";
 echo $contaPoupanca->exibirDadosConta() . "<br>";
+
+try {
+    echo $contaEspecial->transferir(1500.00, $contaEspecial) . "<br>";
+    echo "<h3>Transferência</h3>";
+    echo $contaEspecial->exibirDadosConta() . "<br>";
+    echo $contaPoupanca->exibirDadosConta() . "<br>";
+} catch (\Exception $e) {
+    echo "Erro: " . $e->getMessage();
+}
