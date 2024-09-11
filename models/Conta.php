@@ -44,4 +44,6 @@ abstract class Conta {
     }
 
     abstract public function sacar(float $valor): string;
+
+    abstract public function transferir(float $valor, Conta $contaDestino): string;
 }
